@@ -1,20 +1,214 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<div class="topnav">
+  <div class="topnav-right">
+    <img src="../assets/images/taxiwala2.PNG" alt="company logo" class="companylogo" width="130" routerLink="/register">
+    <a routerLink="/home" routerLinkActive="activeclass">HOME</a>
+    <a routerLink="/profil" routerLinkActive="activeclass">PROFIL</a>
+    <a routerLink="/taxiservice" routerLinkActive="activeclass">TAXISERVICE</a>
+    <a routerLink="/preise" routerLinkActive="activeclass">PREISE</a>
+    <a routerLink="/kontakt" routerLinkActive="activeclass">KONTACT</a>
+    <a class="icon" (click)="responsiveFun()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
 
+<div class="showmenuclass" #responsiveMenu>
+  <ul>
+    <li><a routerLink="/home" (click)="navFunction()">Home</a></li>
+    <li><a routerLink="/profil" (click)="navFunction()">PROFIL</a></li>
+    <li><a routerLink="/taxiservice" (click)="navFunction()">TAXISERVICE</a></li>
+    <li><a routerLink="/preise" (click)="navFunction()">PREISE</a></li>
+    <li><a routerLink="/kontakt" (click)="navFunction()">KONTACT</a></li>
+  </ul>
+</div>
+
+<div>
+  <section class="banner-area relative" id="home">
+    <div class="overlay overlay-bg"></div>
+    <div class="container">
+      <div class="row fullscreen d-flex align-items-center justify-content-between">
+        <div class="banner-content col-lg-6 col-md-6" style="margin-top:20%">
+          <h2 class="text-white" style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; color: white">Need a ride? just call or book online</h2>
+          <h1 class="text-uppercase" style="color: orange; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif"> 06181 / 998525 </h1>
+          <p class="pt-10 pb-10 text-white" style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; color: white">
+            Have a pleasent journey !
+          </p>
+        </div>
+        <div class="col-lg-4  col-md-6 col-xs-12 header-right" style="border: 1px solid orange; padding: 10px;float: right;margin-top: 50px;margin-bottom: 3%">
+          <h4 class="pb-30 text-center" style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; color: white">Book Your Texi Online!</h4>
+          <form class="form">
+
+            <div class="form-group col-lg-12 col-xs-12">
+
+              <input type="text" class="form-control" placeholder="Firma">
+            </div>
+
+            <div class="form-group col-lg-6">
+
+              <input type="text" class="form-control" placeholder="Name">
+            </div>
+
+            <div class="form-group col-lg-6">
+
+              <input type="text" class="form-control" placeholder="Vorname">
+            </div>
+
+            <div class="form-group col-lg-6">
+
+              <input type="text" class="form-control" placeholder="PLZ">
+            </div>
+
+            <div class="form-group col-lg-6">
+
+              <input type="text" class="form-control" placeholder="Ort">
+            </div>
+
+            <div class="form-group col-lg-12">
+
+              <input type="text" class="form-control" placeholder="Telephone / Mobile">
+            </div>
+
+            <div class="form-group col-lg-12">
+
+              <input type="text" class="form-control" placeholder="Email address">
+            </div>
+
+            <div class="form-group col-lg-4">
+
+              <input type="text" class="form-control" placeholder="Personen">
+            </div>
+
+            <div class="form-group col-lg-4">
+
+              <input type="text" class="form-control" placeholder="Gepäck(größ)">
+            </div>
+
+            <div class="form-group col-lg-4">
+              <input type="text" class="form-control" placeholder="Gepäck(klein)">
+            </div>
+
+            <div class="form-group col-lg-6">
+              <input type="text" class="form-control" placeholder="Datum der Abholung">
+            </div>
+
+            <div class="form-group col-lg-6">
+              <input type="text" class="form-control" placeholder="Anholzeit (HH:MM)">
+            </div>
+
+            <div class="form-group col-lg-6">
+              <input type="text" class="form-control" placeholder="Flugnummer">
+            </div>
+
+            <div class="form-group col-lg-6">
+              <input type="text" class="form-control" placeholder="Abflug / Ankunfzeit">
+            </div>
+
+            <div class="form-group col-lg-12">
+              <textarea class="form-control" rows="3" id="comment" placeholder="Sontiges / wünsch / Bemekungen"></textarea>
+            </div>
+
+            <div class="form-group col-lg-12">
+              <button class="btn btn-default btn-lg btn-block text-center text-uppercase" style="background: orange; color: white; border: none">Make reservation</button>
+            </div>
+
+
+
+            <!--  -->
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+<router-outlet></router-outlet>
+
+<div class="footersection">
+  <!--FOOTER 2-->
+  <footer class="footer2">
+    <div class="footer">
+      <div class="customcontainer">
+        <div class="row">
+          <nav class="col-md-3 col-sm-6 col-xs-12">
+            <h3>Browse <span>Categories</span></h3>
+            <ul>
+              <li>
+                <a href="#">Lorem Ipsum</a>
+              </li>
+              <li>
+                <a href="#">Lorem Ipsum</a>
+              </li>
+              <li>
+                <a href="#">Lorem Ipsum</a>
+              </li>
+              <li>
+                <a href="#">Lorem Ipsum</a>
+              </li>
+            </ul>
+          </nav>
+          <nav class="col-md-3 col-sm-6 col-xs-12">
+            <h3>How <span>to Buy</span></h3>
+            <ul>
+              <li>
+                <a href="#">Lorem Ipsum</a>
+              </li>
+              <li>
+                <a href="#">Lorem Ipsum</a>
+              </li>
+              <li>
+                <a href="#">Lorem Ipsum</a>
+              </li>
+              <li>
+                <a href="#">Lorem Ipsum</a>
+              </li>
+            </ul>
+          </nav>
+          <nav class="col-md-3 col-sm-6 col-xs-12">
+            <h3>Help <span>& Support</span></h3>
+            <ul>
+              <li>
+                <a href="#">Lorem Ipsum</a>
+              </li>
+              <li>
+                <a href="#">Lorem Ipsum</a>
+              </li>
+              <li>
+                <a href="#">Lorem Ipsum</a>
+              </li>
+              <li>
+                <a href="#">Lorem Ipsum</a>
+              </li>
+            </ul>
+          </nav>
+
+          <nav class="col-md-3 col-sm-6 col-xs-12">
+            <h3>Lorem <span>Ipsum</span></h3>
+            <div class="input-group input-group-md">
+              <input type="text" class="form-control" placeholder="Email Address">
+              <span class="input-group-addon">Subscribe</span>
+            </div>
+            <ul class="social">
+              <li><a href="#"><i class="fa fa-facebook fa-lg"></i></a></li>
+              <li><a href="#"><i class="fa fa-twitter fa-lg"></i></a></li>
+              <li><a href="#"><i class="fa fa-google-plus fa-lg"></i></a></li>
+              <li><a href="#"><i class="fa fa-pinterest fa-lg"></i></a></li>
+              <li><a href="#"><i class="fa fa-youtube fa-lg"></i></a></li>
+            </ul>
+          </nav>
+
+        </div>
+        <!--/.row-->
+      </div>
+      <!--/.container-->
+    </div>
+    <!--/.footer-->
+
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="pull-left"> Copyright © TaxiWala 2018. All right reserved.</div>
+      </div>
+    </div>
+    <!--/.footer-bottom-->
+  </footer>
+</div>
