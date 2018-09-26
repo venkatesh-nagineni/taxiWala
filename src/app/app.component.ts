@@ -47,8 +47,10 @@ export class AppComponent implements AfterViewInit {
   navSection(navLink) {
     this.responsive.nativeElement.style.display = 'none';
     if (navLink === 'home') {
+      this.router.navigate(['/home']);
       this.homepage.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
     } else if (navLink === 'profile') {
+      this.router.navigate(['/profil']);
       this.profilepage.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
     } else if (navLink === 'taxiservice') {
       this.servicepage.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
