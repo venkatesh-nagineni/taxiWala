@@ -1,9 +1,10 @@
 import { Component, ElementRef, ViewChild, HostListener, AfterViewInit } from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  styleUrls: ['./app.component.scss'],
 })
 
 export class AppComponent implements AfterViewInit {
@@ -11,6 +12,12 @@ export class AppComponent implements AfterViewInit {
   showmenu = false;
   screenWidth: any;
   @ViewChild('responsiveMenu') responsive: ElementRef;
+  @ViewChild('homeElm') homepage: ElementRef;
+  @ViewChild('profileElm') profilepage: ElementRef;
+  @ViewChild('serviceElm') servicepage: ElementRef;
+  @ViewChild('priceElm') pricepage: ElementRef;
+  @ViewChild('kontaktElm') contactpage: ElementRef;
+
 
   @HostListener('window:resize', ['$event'])
     onResize(event?) {
@@ -20,7 +27,7 @@ export class AppComponent implements AfterViewInit {
       }
 }
 
-  constructor(private elm: ElementRef) {
+  constructor(private elm: ElementRef, private router: Router) {
     // this.onResize();
   }
 
@@ -37,8 +44,19 @@ export class AppComponent implements AfterViewInit {
     }
   }
 
-  navFunction() {
+  navSection(navLink) {
     this.responsive.nativeElement.style.display = 'none';
+    if (navLink === 'home') {
+      this.homepage.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else if (navLink === 'profile') {
+      this.profilepage.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else if (navLink === 'taxiservice') {
+      this.servicepage.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else if (navLink === 'preise') {
+      this.pricepage.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else if (navLink === 'contact') {
+      this.contactpage.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   }
 
 }
