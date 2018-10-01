@@ -11,21 +11,13 @@ import {SharedService} from './shared.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {PagenotfoundComponent} from './pagenotfound/pagenotfound.component';
 import {KontaktComponent} from './kontakt/kontakt.component';
-import {PreiseComponent} from './preise/preise.component';
-import {ProfileComponent} from './profile/profile.component';
-import {TaxiserviceComponent} from './taxiservice/taxiservice.component';
+import { CarouselModule } from 'ngx-bootstrap';
+import { ModalModule } from 'ngx-bootstrap';
+import { MatFormFieldModule, MatInputModule, MatIconModule, MatDialogModule } from '@angular/material';
+import {MatButtonModule} from '@angular/material/button';
+import {MatSelectModule} from '@angular/material/select';
 
 enableProdMode();
-const routes: Routes = [
-
-  {path: 'home', component: HomeComponent},
-  {path: 'profil', component: ProfileComponent},
-  {path: 'taxiservice', component: TaxiserviceComponent},
-  {path: 'preise', component: PreiseComponent},
-  {path: 'kontakt', component: KontaktComponent},
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: '**', component: PagenotfoundComponent },
-];
 
 @NgModule({
   declarations: [
@@ -33,18 +25,22 @@ const routes: Routes = [
     HomeComponent,
     PagenotfoundComponent,
     KontaktComponent,
-    PreiseComponent,
-    ProfileComponent,
-    TaxiserviceComponent
   ],
-  entryComponents: [],
+  entryComponents: [KontaktComponent],
   imports: [
     BrowserModule,
     CommonModule,
     FormsModule,
     BrowserAnimationsModule,
-    RouterModule.forRoot(routes),
+    CarouselModule.forRoot(),
+    ModalModule.forRoot(),
+    MatSelectModule,
+    MatButtonModule,
+    MatIconModule,
+    MatInputModule,
     ReactiveFormsModule,
+    MatFormFieldModule,
+    MatDialogModule,
     HttpModule,
   ],
   providers: [AuthenticationService, SharedService],

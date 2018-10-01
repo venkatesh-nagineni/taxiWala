@@ -1,4 +1,5 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, Inject } from '@angular/core';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 
 @Component({
   selector: 'app-kontakt',
@@ -6,11 +7,16 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   styleUrls: ['./kontakt.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class KontaktComponent implements OnInit {
+export class KontaktComponent {
 
-  constructor() { }
+  constructor(public dialogRef: MatDialogRef<KontaktComponent>) {}
 
-  ngOnInit() {
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
+
+  sendMailData() {
+
   }
 
 }
