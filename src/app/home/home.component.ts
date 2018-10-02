@@ -30,8 +30,9 @@ export class HomeComponent {
 
     openModal() {
       const dialogRef = this.dialog.open(KontaktComponent, {hasBackdrop: false});
+      this.isClassVisible = true;
       dialogRef.afterClosed().subscribe(result => {
-        console.log('The dialog was closed');
+        this.isClassVisible = false;
       });
     }
 
